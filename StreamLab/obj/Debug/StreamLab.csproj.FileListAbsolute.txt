@@ -1,0 +1,8 @@
+C:\Users\Leo\source\repos\StreamLab\StreamLab\bin\Debug\StreamLab.exe.config
+C:\Users\Leo\source\repos\StreamLab\StreamLab\bin\Debug\StreamLab.exe
+C:\Users\Leo\source\repos\StreamLab\StreamLab\bin\Debug\StreamLab.pdb
+C:\Users\Leo\source\repos\StreamLab\StreamLab\obj\Debug\StreamLab.csproj.AssemblyReference.cache
+C:\Users\Leo\source\repos\StreamLab\StreamLab\obj\Debug\StreamLab.csproj.SuggestedBindingRedirects.cache
+C:\Users\Leo\source\repos\StreamLab\StreamLab\obj\Debug\StreamLab.csproj.CoreCompileInputs.cache
+C:\Users\Leo\source\repos\StreamLab\StreamLab\obj\Debug\StreamLab.exe
+C:\Users\Leo\source\repos\StreamLab\StreamLab\obj\Debug\StreamLab.pdb
