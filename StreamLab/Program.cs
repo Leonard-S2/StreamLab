@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Collections;
 
 namespace StreamLab
 {
@@ -11,6 +13,9 @@ namespace StreamLab
         public static int select = 0;
         public static int listMax = 0;
         public static string selectList;
+        public static string viewers = "";
+        public static string likes = "";
+        public static string dislikes = "";
         public static string selectListYes;
         public static List<int> list = new List<int>();
         public static List<string> titlesList = new List<string>();
@@ -238,11 +243,11 @@ namespace StreamLab
                 Console.Write("Please enter the description of the stream: ");
                 Description = Console.ReadLine();
                 Console.Write("Please enter the number of viewers: ");
-                string viewers = Console.ReadLine();
+                viewers = Console.ReadLine();
                 Console.Write("Please enter the number of likes: ");
-                string likes = Console.ReadLine();
+                likes = Console.ReadLine();
                 Console.Write("Please enter the number of dislikes: ");
-                string dislikes = Console.ReadLine();
+                dislikes = Console.ReadLine();
 
                 //Conversion string to int
                 View = int.TryParse(viewers, out d);
@@ -312,6 +317,8 @@ namespace StreamLab
                     Console.WriteLine(dates.ToString());
                     Console.WriteLine("Your strem post has been saved, do you want to generate another one?");
                     ListPostStream();
+                    //Save recent list
+                    ListSaveList();
                     Console.WriteLine("Press Y for yes or N for no");
                     Repeat = Console.ReadLine();
                     if (Repeat == "Y" || Repeat == "y")
@@ -336,7 +343,45 @@ namespace StreamLab
                 }
             }
         }
-        
+
+        //Save all list .txt
+        public static void ListSaveList()
+        {
+            //List posts
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "Title Post: ");
+            foreach (var item2 in Title)
+            {
+                File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", item2.ToString());
+            }
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "Description Post: ");
+            foreach (var item3 in Description)
+            {
+                File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", item3.ToString());
+            }
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "Viewers Post: ");
+            foreach (var item4 in viewers)
+            {
+                File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", item4.ToString());
+            }
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "Likes Post: ");
+            foreach (var item5 in likes)
+            {
+                File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", item5.ToString());
+            }
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "Dislikes Post: ");
+            foreach (var item6 in dislikes)
+            {
+                File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", item6.ToString());
+            }
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+            File.AppendAllText(@"C:\Users\Leo\Desktop\Text\Titles.txt", "\n");
+
+
+        }
         //Method view list post Id stream
         public static void ListIds()
         {
@@ -537,6 +582,7 @@ namespace StreamLab
             viewList.Add(a);
             likesList.Add(b);
             dislikesList.Add(c);
+
         }
         static void Main(string[] args)
         {
